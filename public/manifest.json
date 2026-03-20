@@ -4,8 +4,8 @@
   "description": "Guida ufficiale del Centro Visite della Grotta di Sant'Angelo in Criptis",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#04002A",
-  "theme_color": "#04002A",
+  "background_color": "#FFFFFF",
+  "theme_color": "#1C75BB",
   "orientation": "portrait",
   "icons": [
     {

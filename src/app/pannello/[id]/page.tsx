@@ -44,7 +44,7 @@ export default function PannelloPage() {
 
   if (!pannello) {
     return (
-      <div style={{ padding: 40, textAlign: "center", color: "#FFFFFF", fontFamily: "Jost, sans-serif", background: "#04002A", minHeight: "100vh" }}>
+      <div style={{ padding: 40, textAlign: "center", color: "#04002A", fontFamily: "Jost, sans-serif", background: "#FFFFFF", minHeight: "100vh" }}>
         Pannello non trovato.
         <br />
         <button onClick={() => router.push("/")} style={{ marginTop: 16, color: "#1C75BB", background: "none", border: "none", cursor: "pointer", fontSize: 14 }}>
@@ -62,7 +62,6 @@ export default function PannelloPage() {
 
   const avviaLettura = async () => {
     let testo = testoTradotto;
-
     if (!testo && lingua !== "it-IT") {
       setIsTranslating(true);
       try {
@@ -108,7 +107,6 @@ export default function PannelloPage() {
       setIsPlaying(false);
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-
     window.speechSynthesis.speak(utterance);
   };
 
@@ -120,7 +118,6 @@ export default function PannelloPage() {
   };
 
   const toggleLettura = () => { if (isPlaying) fermaLettura(); else avviaLettura(); };
-
   const testoVisibile = getTesto();
 
   return (
@@ -128,44 +125,44 @@ export default function PannelloPage() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: #04002A; font-family: 'Jost', sans-serif; color: #FFFFFF; min-height: 100vh; }
+        body { background: #FFFFFF; font-family: 'Jost', sans-serif; color: #04002A; min-height: 100vh; }
 
-        .topbar { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; background: #04002A; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(28,117,187,0.15); }
-        .back-btn { background: none; border: none; color: rgba(255,255,255,0.45); cursor: pointer; display: flex; align-items: center; gap: 6px; font-family: 'Jost', sans-serif; font-size: 13px; padding: 4px; transition: color 0.2s; }
-        .back-btn:hover { color: #FFFFFF; }
-        .topbar-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: rgba(255,255,255,0.25); letter-spacing: 1px; }
+        .topbar { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; background: #FFFFFF; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(28,117,187,0.15); }
+        .back-btn { background: none; border: none; color: rgba(4,0,42,0.4); cursor: pointer; display: flex; align-items: center; gap: 6px; font-family: 'Jost', sans-serif; font-size: 13px; padding: 4px; transition: color 0.2s; }
+        .back-btn:hover { color: #04002A; }
+        .topbar-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: rgba(4,0,42,0.25); letter-spacing: 1px; }
 
         .hero { padding: 28px 20px 24px; border-bottom: 1px solid rgba(28,117,187,0.1); }
         .pannello-cat { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; margin-bottom: 10px; color: #1C75BB; }
-        .pannello-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 500; line-height: 1.15; margin-bottom: 6px; color: #FFFFFF; }
-        .pannello-sub { font-size: 14px; color: rgba(255,255,255,0.4); font-weight: 300; font-style: italic; }
+        .pannello-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 500; line-height: 1.15; margin-bottom: 6px; color: #04002A; }
+        .pannello-sub { font-size: 14px; color: rgba(4,0,42,0.4); font-weight: 300; font-style: italic; }
 
         .audio-section { padding: 20px; border-bottom: 1px solid rgba(28,117,187,0.1); }
-        .audio-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 12px; }
+        .audio-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(4,0,42,0.25); margin-bottom: 12px; }
         .lingue-row { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
-        .lingua-btn { background: none; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; padding: 5px 10px; font-size: 11px; color: rgba(255,255,255,0.35); cursor: pointer; font-family: 'Jost', sans-serif; font-weight: 500; transition: all 0.15s; }
-        .lingua-btn.active { border-color: #1C75BB; color: #1C75BB; background: rgba(28,117,187,0.1); }
+        .lingua-btn { background: none; border: 1px solid rgba(4,0,42,0.12); border-radius: 6px; padding: 5px 10px; font-size: 11px; color: rgba(4,0,42,0.35); cursor: pointer; font-family: 'Jost', sans-serif; font-weight: 500; transition: all 0.15s; }
+        .lingua-btn.active { border-color: #1C75BB; color: #1C75BB; background: rgba(28,117,187,0.07); }
         .play-row { display: flex; align-items: center; gap: 14px; }
         .play-btn { width: 52px; height: 52px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; background: #1C75BB; flex-shrink: 0; transition: transform 0.15s, opacity 0.15s; }
         .play-btn:hover { transform: scale(1.06); }
-        .play-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+        .play-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
         .progress-wrap { flex: 1; }
-        .progress-bar-bg { height: 3px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; margin-bottom: 6px; }
+        .progress-bar-bg { height: 3px; background: rgba(4,0,42,0.08); border-radius: 2px; overflow: hidden; margin-bottom: 6px; }
         .progress-bar-fill { height: 100%; background: #1C75BB; border-radius: 2px; transition: width 0.2s linear; }
-        .progress-label { font-size: 11px; color: rgba(255,255,255,0.3); font-weight: 300; }
+        .progress-label { font-size: 11px; color: rgba(4,0,42,0.35); font-weight: 300; }
 
         .testo-section { padding: 24px 20px; }
-        .testo-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.2); margin-bottom: 16px; }
-        .testo-corpo { font-size: 15px; line-height: 1.75; color: rgba(255,255,255,0.7); font-weight: 300; white-space: pre-wrap; }
+        .testo-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(4,0,42,0.2); margin-bottom: 16px; }
         .testo-tradotto-badge { display: inline-block; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #1C75BB; border: 1px solid rgba(28,117,187,0.3); border-radius: 4px; padding: 2px 8px; margin-bottom: 14px; }
+        .testo-corpo { font-size: 15px; line-height: 1.75; color: rgba(4,0,42,0.75); font-weight: 300; white-space: pre-wrap; }
 
         .nav-pannelli { display: flex; gap: 10px; padding: 20px; border-top: 1px solid rgba(28,117,187,0.1); margin-top: 8px; margin-bottom: 20px; }
-        .nav-btn { flex: 1; background: rgba(28,117,187,0.08); border: 1px solid rgba(28,117,187,0.2); border-radius: 12px; padding: 14px; color: #FFFFFF; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 13px; display: flex; align-items: center; gap: 8px; transition: all 0.2s; text-decoration: none; }
-        .nav-btn:hover { background: rgba(28,117,187,0.15); }
+        .nav-btn { flex: 1; background: rgba(28,117,187,0.05); border: 1px solid rgba(28,117,187,0.2); border-radius: 12px; padding: 14px; color: #04002A; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 13px; display: flex; align-items: center; gap: 8px; transition: all 0.2s; text-decoration: none; }
+        .nav-btn:hover { background: rgba(28,117,187,0.1); }
         .nav-btn.next { justify-content: flex-end; flex-direction: row-reverse; text-align: right; }
-        .nav-btn-label { font-size: 10px; color: rgba(255,255,255,0.3); display: block; margin-bottom: 2px; letter-spacing: 1px; text-transform: uppercase; }
+        .nav-btn-label { font-size: 10px; color: rgba(4,0,42,0.3); display: block; margin-bottom: 2px; letter-spacing: 1px; text-transform: uppercase; }
 
-        .fab-chat { position: fixed; bottom: 24px; right: 20px; width: 54px; height: 54px; border-radius: 50%; background: #1C75BB; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(28,117,187,0.4); transition: transform 0.2s; z-index: 99; color: #FFFFFF; }
+        .fab-chat { position: fixed; bottom: 24px; right: 20px; width: 54px; height: 54px; border-radius: 50%; background: #1C75BB; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(28,117,187,0.35); transition: transform 0.2s; z-index: 99; color: #FFFFFF; }
         .fab-chat:hover { transform: scale(1.08); }
       `}</style>
 

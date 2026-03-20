@@ -52,28 +52,28 @@ export default function ChatModal({ onClose, pannelloContesto }: ChatModalProps)
   return (
     <>
       <style>{`
-        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 200; display: flex; align-items: flex-end; }
-        .modal-panel { width: 100%; height: 75vh; background: #04002A; border-radius: 20px 20px 0 0; border-top: 1px solid rgba(28,117,187,0.25); display: flex; flex-direction: column; animation: slide-up 0.3s cubic-bezier(0.34,1.56,0.64,1); }
+        .modal-overlay { position: fixed; inset: 0; background: rgba(4,0,42,0.5); z-index: 200; display: flex; align-items: flex-end; }
+        .modal-panel { width: 100%; height: 75vh; background: #FFFFFF; border-radius: 20px 20px 0 0; border-top: 2px solid #1C75BB; display: flex; flex-direction: column; animation: slide-up 0.3s cubic-bezier(0.34,1.56,0.64,1); }
         @keyframes slide-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
-        .modal-handle { width: 36px; height: 4px; background: rgba(255,255,255,0.12); border-radius: 2px; margin: 12px auto 0; flex-shrink: 0; }
-        .modal-header { padding: 14px 20px 12px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(28,117,187,0.12); flex-shrink: 0; }
-        .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #FFFFFF; }
-        .modal-close { background: none; border: none; color: rgba(255,255,255,0.35); cursor: pointer; padding: 4px; transition: color 0.15s; }
-        .modal-close:hover { color: #FFFFFF; }
+        .modal-handle { width: 36px; height: 4px; background: rgba(4,0,42,0.12); border-radius: 2px; margin: 12px auto 0; flex-shrink: 0; }
+        .modal-header { padding: 14px 20px 12px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(28,117,187,0.15); flex-shrink: 0; }
+        .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #04002A; }
+        .modal-close { background: none; border: none; color: rgba(4,0,42,0.3); cursor: pointer; padding: 4px; transition: color 0.15s; }
+        .modal-close:hover { color: #04002A; }
         .modal-msgs { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; scrollbar-width: none; }
         .modal-msgs::-webkit-scrollbar { display: none; }
         .msg-bubble { max-width: 85%; padding: 10px 14px; border-radius: 14px; font-size: 14px; line-height: 1.55; white-space: pre-wrap; font-family: 'Jost', sans-serif; font-weight: 300; }
-        .msg-ai { background: rgba(28,117,187,0.1); border: 1px solid rgba(28,117,187,0.2); color: rgba(255,255,255,0.85); align-self: flex-start; border-bottom-left-radius: 4px; }
+        .msg-ai { background: rgba(28,117,187,0.07); border: 1px solid rgba(28,117,187,0.15); color: #04002A; align-self: flex-start; border-bottom-left-radius: 4px; }
         .msg-user { background: #1C75BB; color: #FFFFFF; align-self: flex-end; border-bottom-right-radius: 4px; }
-        .typing { display: flex; gap: 4px; align-items: center; padding: 12px 14px; background: rgba(28,117,187,0.1); border: 1px solid rgba(28,117,187,0.2); border-radius: 14px; border-bottom-left-radius: 4px; align-self: flex-start; }
+        .typing { display: flex; gap: 4px; align-items: center; padding: 12px 14px; background: rgba(28,117,187,0.07); border: 1px solid rgba(28,117,187,0.15); border-radius: 14px; border-bottom-left-radius: 4px; align-self: flex-start; }
         .dot { width: 5px; height: 5px; border-radius: 50%; background: #1C75BB; animation: bounce 1.2s ease-in-out infinite; }
         .dot:nth-child(2) { animation-delay: 0.2s; }
         .dot:nth-child(3) { animation-delay: 0.4s; }
         @keyframes bounce { 0%,60%,100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-4px); opacity: 1; } }
         .modal-input-area { padding: 12px 16px; border-top: 1px solid rgba(28,117,187,0.12); display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
-        .modal-input { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(28,117,187,0.2); border-radius: 22px; padding: 10px 16px; color: #FFFFFF; font-family: 'Jost', sans-serif; font-size: 14px; outline: none; transition: border-color 0.15s; }
+        .modal-input { flex: 1; background: rgba(4,0,42,0.03); border: 1px solid rgba(28,117,187,0.2); border-radius: 22px; padding: 10px 16px; color: #04002A; font-family: 'Jost', sans-serif; font-size: 14px; outline: none; transition: border-color 0.15s; }
         .modal-input:focus { border-color: #1C75BB; }
-        .modal-input::placeholder { color: rgba(255,255,255,0.2); }
+        .modal-input::placeholder { color: rgba(4,0,42,0.25); }
         .modal-send { width: 40px; height: 40px; border-radius: 50%; background: #1C75BB; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: opacity 0.15s; color: #FFFFFF; }
         .modal-send:disabled { opacity: 0.3; cursor: not-allowed; }
       `}</style>
