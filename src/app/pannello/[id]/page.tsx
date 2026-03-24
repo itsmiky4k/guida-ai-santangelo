@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
+import Image from "next/image";
 import { PANNELLI } from "@/data/pannelli";
 import ChatModal from "@/components/ChatModal";
 
@@ -136,6 +137,10 @@ export default function PannelloPage() {
         .pannello-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 500; line-height: 1.15; margin-bottom: 6px; color: #04002A; }
         .pannello-sub { font-size: 14px; color: rgba(4,0,42,0.4); font-weight: 300; font-style: italic; }
 
+        .immagine-section { padding: 20px 20px 0; }
+        .immagine-wrap { border-radius: 12px; overflow: hidden; border: 1px solid rgba(28,117,187,0.15); position: relative; width: 100%; aspect-ratio: 4/3; }
+        .immagine-wrap-second { margin-top: 10px; }
+
         .audio-section { padding: 20px; border-bottom: 1px solid rgba(28,117,187,0.1); }
         .audio-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(4,0,42,0.25); margin-bottom: 12px; }
         .lingue-row { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
@@ -178,6 +183,31 @@ export default function PannelloPage() {
         <div className="pannello-title">{pannello.titolo}</div>
         {pannello.sottotitolo && <div className="pannello-sub">{pannello.sottotitolo}</div>}
       </div>
+
+      {pannello.immagine && (
+        <div className="immagine-section">
+          <div className="immagine-wrap">
+            <Image
+              src={pannello.immagine}
+              alt={pannello.titolo}
+              fill
+              style={{ objectFit: "cover" }}
+              sizes="100vw"
+            />
+          </div>
+          {pannello.immagineSecondaria && (
+            <div className="immagine-wrap immagine-wrap-second">
+              <Image
+                src={pannello.immagineSecondaria}
+                alt={`${pannello.titolo} — immagine secondaria`}
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="100vw"
+              />
+            </div>
+          )}
+        </div>
+      )}
 
       <div className="audio-section">
         <div className="audio-label">Ascolto audio</div>
