@@ -11,7 +11,7 @@ export interface Pannello {
   categoria: Categoria;
 }
 
-export const pannelli: Pannello[] = [
+export const PANNELLI: Pannello[] = [
   {
     id: "pannello-101",
     numero: 101,
