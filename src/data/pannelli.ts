@@ -1,87 +1,157 @@
+export type Categoria = "storia" | "architettura" | "arte" | "natura" | "spiritualita";
+
 export interface Pannello {
   id: string;
   numero: number;
   titolo: string;
   sottotitolo?: string;
   testo: string;
-  immagine?: string; // path relativo in /public/images/
-  categoria: "storia" | "architettura" | "arte" | "natura" | "spiritualita";
+  immagine?: string;
+  immagineSecondaria?: string;
+  categoria: Categoria;
 }
 
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// SOSTITUISCI QUESTI DATI CON I CONTENUTI REALI
-// dei file Word che hai. Un oggetto per pannello.
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-export const PANNELLI: Pannello[] = [
+export const pannelli: Pannello[] = [
   {
-    id: "01-introduzione",
-    numero: 1,
-    titolo: "La Grotta di Sant'Angelo in Criptis",
-    sottotitolo: "Un crocevia di storia, fede e cultura",
-    testo: `Tra antichi tratturi e lungo la storica via Bari-Matera, sorge la Grotta di Sant'Angelo a Santeramo. Da secoli, questa via simbolo della transumanza ha visto il passaggio di pellegrini, pastori e bestiame, dando vita a strutture che ancora oggi raccontano storie di devozione.
-
-In un territorio quasi privo di sorgenti, la presenza di acqua nella grotta appariva come un miracolo divino. L'acqua di stillicidio, raccolta in naturali vasche e laghetti, era considerata miracolosa e veniva utilizzata nei rituali di abluzione.`,
-    immagine: "/images/pannello-01.jpg",
+    id: "pannello-101",
+    numero: 101,
+    titolo: "Introduzione al Percorso",
+    sottotitolo: "Progetto Sant'Angelo 4.0 e Benemeriti",
+    testo: "[DA COMPLETARE CON DOCX]",
+    immagine: "/images/pannello-101.jpg",
     categoria: "storia",
   },
   {
-    id: "02-architettura",
-    numero: 2,
-    titolo: "Architettura e Sacralità",
-    sottotitolo: "La chiesa del XII secolo",
-    testo: `Attorno alla grotta sorsero numerosi edifici destinati ad accogliere chi viaggiava lungo i tratturi. La chiesa di Sant'Angelo, risalente a metà del XII secolo, con la sua pianta bicellulare e la cupola in asse, testimonia il culmine del culto micaelico nel luogo.
-
-Le modifiche apportate agli accessi e la pavimentazione dei percorsi interni ne esaltavano il valore mistico.`,
-    immagine: "/images/pannello-02.jpg",
+    id: "pannello-102",
+    numero: 102,
+    titolo: "Sant'Angelo del Lago Travato",
+    sottotitolo: "Toponomastica longobarda",
+    testo: "[DA COMPLETARE CON DOCX]",
+    immagine: "/images/pannello-102.jpg",
+    categoria: "storia",
+  },
+  {
+    id: "pannello-103",
+    numero: 103,
+    titolo: "Viabilità Antica",
+    sottotitolo: "Viaggiare nel passato",
+    testo: "[DA COMPLETARE CON DOCX]",
+    immagine: "/images/pannello-103.jpg",
+    categoria: "storia",
+  },
+  {
+    id: "pannello-104",
+    numero: 104,
+    titolo: "Geologia e Carsismo",
+    sottotitolo: "Forme del rupestre",
+    testo: "[DA COMPLETARE CON DOCX]",
+    immagine: "/images/pannello-104.jpg",
+    categoria: "natura",
+  },
+  {
+    id: "pannello-105",
+    numero: 105,
+    titolo: "La Nave",
+    sottotitolo: "Graffito medievale",
+    testo: "[DA COMPLETARE CON DOCX]",
+    immagine: "/images/pannello-105.jpg",
+    categoria: "storia",
+  },
+  {
+    id: "pannello-106",
+    numero: 106,
+    titolo: "La Chiesa",
+    sottotitolo: "Architettura",
+    testo: "[DA COMPLETARE CON DOCX]",
+    immagine: "/images/pannello-106.jpg",
     categoria: "architettura",
   },
   {
-    id: "03-iscrizioni",
-    numero: 3,
-    titolo: "Le Iscrizioni sulle Pareti",
-    sottotitolo: "Voci dal passato",
-    testo: `Le migliaia di iscrizioni incise sulle pareti della grotta, datate dal V al XV secolo, rappresentano una testimonianza unica della devozione popolare. I pellegrini lasciavano il loro segno pronunciando preghiere come "Memento Domine" e "ricordati di me Signore".
-
-Un'affascinante iscrizione risale al XV secolo: "Schivami dai mali me a nome Bella Bella". I caratteri umanistici suggeriscono che una cortigiana di grandi città abbia lasciato la sua testimonianza.`,
-    immagine: "/images/pannello-03.jpg",
-    categoria: "arte",
+    id: "pannello-107",
+    numero: 107,
+    titolo: "Grotte Naturali Dedicate all'Arcangelo Michele in Puglia",
+    testo: "[DA COMPLETARE CON DOCX]",
+    immagine: "/images/pannello-107.jpg",
+    categoria: "spiritualita",
   },
   {
-    id: "04-transumanza",
-    numero: 4,
-    titolo: "La Via della Transumanza",
-    sottotitolo: "Il tratturo Bari-Matera",
-    testo: `La Grotta di Sant'Angelo sorgeva lungo uno dei principali tratturi pugliesi, la via Bari-Matera. Questi percorsi millenari erano le grandi arterie della transumanza — il movimento stagionale delle greggi tra le pianure invernali e i pascoli estivi.
-
-Pastori, pellegrini e mercanti percorrevano questa via, trasformando la grotta in un punto di sosta spirituale e pratico lungo il cammino.`,
-    immagine: "/images/pannello-04.jpg",
+    id: "pannello-108",
+    numero: 108,
+    titolo: "L'Ingresso della Grotta",
+    testo: "[DA COMPLETARE CON DOCX]",
+    immagine: "/images/pannello-108.jpg",
+    categoria: "architettura",
+  },
+  {
+    id: "pannello-109",
+    numero: 109,
+    titolo: "Iscrizione di Bella Bella",
+    sottotitolo: "XV secolo",
+    testo: "[DA COMPLETARE CON DOCX]",
+    immagine: "/images/pannello-109.jpg",
     categoria: "storia",
   },
   {
-    id: "05-acqua-sacra",
-    numero: 5,
-    titolo: "L'Acqua Miracolosa",
-    sottotitolo: "Il dono divino nella pietra",
-    testo: `In un territorio quasi privo di sorgenti naturali, la presenza di acqua nella grotta era considerata un vero miracolo. L'acqua di stillicidio — quella che filtra lentamente attraverso la roccia — si raccoglieva in vasche naturali e piccoli laghetti interni.
-
-I pellegrini utilizzavano quest'acqua nei rituali di abluzione, convinti del suo potere purificante e terapeutico. La sua presenza contribuì enormemente alla sacralità del luogo.`,
-    immagine: "/images/pannello-05.jpg",
+    id: "pannello-110",
+    numero: 110,
+    titolo: "Pavimentazione e Percorsi",
+    sottotitolo: "Lumi e lucerne",
+    testo: "[DA COMPLETARE CON DOCX]",
+    immagine: "/images/pannello-110.jpg",
+    categoria: "architettura",
+  },
+  {
+    id: "pannello-111",
+    numero: 111,
+    titolo: "Pellegrini, Edifici e Luoghi di Accoglienza",
+    sottotitolo: "Pastori e transumanza",
+    testo: "[DA COMPLETARE CON DOCX]",
+    immagine: "/images/pannello-111.jpg",
+    categoria: "storia",
+  },
+  {
+    id: "pannello-112",
+    numero: 112,
+    titolo: "Culto delle Acque",
+    sottotitolo: "Graffiti e iscrizioni",
+    testo: "[DA COMPLETARE CON DOCX]",
+    immagine: "/images/pannello-112.jpg",
     categoria: "spiritualita",
   },
+  {
+    id: "pannello-113",
+    numero: 113,
+    titolo: "I Chirotteri",
+    sottotitolo: "Tutela normativa e pipistrelli negli edifici",
+    testo: "[DA COMPLETARE CON DOCX]",
+    immagine: "/images/pannello-113.jpg",
+    categoria: "natura",
+  },
+  {
+    id: "pannello-114",
+    numero: 114,
+    titolo: "Discesa dello Spirito Santo e Cristo Pantocratore",
+    sottotitolo: "Affreschi",
+    testo: "[DA COMPLETARE CON DOCX]",
+    immagine: "/images/pannello-114a.jpg",
+    immagineSecondaria: "/images/pannello-114b.jpg",
+    categoria: "arte",
+  },
+  {
+    id: "pannello-115",
+    numero: 115,
+    titolo: "Fotomosaico della Discesa dello Spirito Santo",
+    testo: "[DA COMPLETARE CON DOCX]",
+    immagine: "/images/pannello-115.jpg",
+    categoria: "arte",
+  },
+  {
+    id: "pannello-116",
+    numero: 116,
+    titolo: "L'Arcangelo Michele che Trafigge il Drago",
+    sottotitolo: "Vergine col Bambino",
+    testo: "[DA COMPLETARE CON DOCX]",
+    immagine: "/images/pannello-116.jpg",
+    categoria: "arte",
+  },
 ];
-
-export const CATEGORIE_LABEL: Record<Pannello["categoria"], string> = {
-  storia: "Storia",
-  architettura: "Architettura",
-  arte: "Arte e Iscrizioni",
-  natura: "Natura",
-  spiritualita: "Spiritualità",
-};
-
-export const CATEGORIE_COLORE: Record<Pannello["categoria"], string> = {
-  storia: "#8B4513",
-  architettura: "#5C6B73",
-  arte: "#7B5EA7",
-  natura: "#4A7C59",
-  spiritualita: "#C8843A",
-};
