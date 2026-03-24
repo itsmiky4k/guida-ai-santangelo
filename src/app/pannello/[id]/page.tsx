@@ -191,7 +191,7 @@ export default function PannelloPage() {
               src={pannello.immagine}
               alt={pannello.titolo}
               fill
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "contain", background: "#f5f5f5" }}
               sizes="100vw"
             />
           </div>
