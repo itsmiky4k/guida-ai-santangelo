@@ -1,5 +1,3 @@
-export type Categoria = "storia" | "architettura" | "arte" | "natura" | "spiritualita";
-
 export interface Pannello {
   id: string;
   numero: number;
@@ -8,7 +6,6 @@ export interface Pannello {
   testo: string;
   immagine?: string;
   immagineSecondaria?: string;
-  categoria: Categoria;
 }
 
 export const PANNELLI: Pannello[] = [
@@ -19,7 +16,6 @@ export const PANNELLI: Pannello[] = [
     sottotitolo: "Progetto Sant'Angelo 4.0 e Benemeriti",
     testo: "[DA COMPLETARE CON DOCX]",
     immagine: "/images/pannello-101.jpg",
-    categoria: "storia",
   },
   {
     id: "pannello-102",
@@ -28,7 +24,6 @@ export const PANNELLI: Pannello[] = [
     sottotitolo: "Toponomastica longobarda",
     testo: "[DA COMPLETARE CON DOCX]",
     immagine: "/images/pannello-102.jpg",
-    categoria: "storia",
   },
   {
     id: "pannello-103",
@@ -37,7 +32,6 @@ export const PANNELLI: Pannello[] = [
     sottotitolo: "Viaggiare nel passato",
     testo: "[DA COMPLETARE CON DOCX]",
     immagine: "/images/pannello-103.jpg",
-    categoria: "storia",
   },
   {
     id: "pannello-104",
@@ -46,7 +40,6 @@ export const PANNELLI: Pannello[] = [
     sottotitolo: "Forme del rupestre",
     testo: "[DA COMPLETARE CON DOCX]",
     immagine: "/images/pannello-104.jpg",
-    categoria: "natura",
   },
   {
     id: "pannello-105",
@@ -55,7 +48,6 @@ export const PANNELLI: Pannello[] = [
     sottotitolo: "Graffito medievale",
     testo: "[DA COMPLETARE CON DOCX]",
     immagine: "/images/pannello-105.jpg",
-    categoria: "storia",
   },
   {
     id: "pannello-106",
@@ -64,7 +56,6 @@ export const PANNELLI: Pannello[] = [
     sottotitolo: "Architettura",
     testo: "[DA COMPLETARE CON DOCX]",
     immagine: "/images/pannello-106.jpg",
-    categoria: "architettura",
   },
   {
     id: "pannello-107",
@@ -72,7 +63,6 @@ export const PANNELLI: Pannello[] = [
     titolo: "Grotte Naturali Dedicate all'Arcangelo Michele in Puglia",
     testo: "[DA COMPLETARE CON DOCX]",
     immagine: "/images/pannello-107.jpg",
-    categoria: "spiritualita",
   },
   {
     id: "pannello-108",
@@ -80,7 +70,6 @@ export const PANNELLI: Pannello[] = [
     titolo: "L'Ingresso della Grotta",
     testo: "[DA COMPLETARE CON DOCX]",
     immagine: "/images/pannello-108.jpg",
-    categoria: "architettura",
   },
   {
     id: "pannello-109",
@@ -89,7 +78,6 @@ export const PANNELLI: Pannello[] = [
     sottotitolo: "XV secolo",
     testo: "[DA COMPLETARE CON DOCX]",
     immagine: "/images/pannello-109.jpg",
-    categoria: "storia",
   },
   {
     id: "pannello-110",
@@ -98,7 +86,6 @@ export const PANNELLI: Pannello[] = [
     sottotitolo: "Lumi e lucerne",
     testo: "[DA COMPLETARE CON DOCX]",
     immagine: "/images/pannello-110.jpg",
-    categoria: "architettura",
   },
   {
     id: "pannello-111",
@@ -107,7 +94,6 @@ export const PANNELLI: Pannello[] = [
     sottotitolo: "Pastori e transumanza",
     testo: "[DA COMPLETARE CON DOCX]",
     immagine: "/images/pannello-111.jpg",
-    categoria: "storia",
   },
   {
     id: "pannello-112",
@@ -116,7 +102,6 @@ export const PANNELLI: Pannello[] = [
     sottotitolo: "Graffiti e iscrizioni",
     testo: "[DA COMPLETARE CON DOCX]",
     immagine: "/images/pannello-112.jpg",
-    categoria: "spiritualita",
   },
   {
     id: "pannello-113",
@@ -125,7 +110,6 @@ export const PANNELLI: Pannello[] = [
     sottotitolo: "Tutela normativa e pipistrelli negli edifici",
     testo: "[DA COMPLETARE CON DOCX]",
     immagine: "/images/pannello-113.jpg",
-    categoria: "natura",
   },
   {
     id: "pannello-114",
@@ -135,7 +119,6 @@ export const PANNELLI: Pannello[] = [
     testo: "[DA COMPLETARE CON DOCX]",
     immagine: "/images/pannello-114a.jpg",
     immagineSecondaria: "/images/pannello-114b.jpg",
-    categoria: "arte",
   },
   {
     id: "pannello-115",
@@ -143,7 +126,6 @@ export const PANNELLI: Pannello[] = [
     titolo: "Fotomosaico della Discesa dello Spirito Santo",
     testo: "[DA COMPLETARE CON DOCX]",
     immagine: "/images/pannello-115.jpg",
-    categoria: "arte",
   },
   {
     id: "pannello-116",
@@ -152,6 +134,5 @@ export const PANNELLI: Pannello[] = [
     sottotitolo: "Vergine col Bambino",
     testo: "[DA COMPLETARE CON DOCX]",
     immagine: "/images/pannello-116.jpg",
-    categoria: "arte",
   },
 ];
