@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { PANNELLI, CATEGORIE_LABEL } from "@/data/pannelli";
+import { PANNELLI } from "@/data/pannelli";
 import ChatModal from "@/components/ChatModal";
 
 const LINGUE = [
@@ -133,7 +133,6 @@ export default function PannelloPage() {
         .topbar-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: rgba(4,0,42,0.25); letter-spacing: 1px; }
 
         .hero { padding: 28px 20px 24px; border-bottom: 1px solid rgba(28,117,187,0.1); }
-        .pannello-cat { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; margin-bottom: 10px; color: #1C75BB; }
         .pannello-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 500; line-height: 1.15; margin-bottom: 6px; color: #04002A; }
         .pannello-sub { font-size: 14px; color: rgba(4,0,42,0.4); font-weight: 300; font-style: italic; }
 
@@ -176,7 +175,6 @@ export default function PannelloPage() {
       </div>
 
       <div className="hero">
-        <div className="pannello-cat">{CATEGORIE_LABEL[pannello.categoria]}</div>
         <div className="pannello-title">{pannello.titolo}</div>
         {pannello.sottotitolo && <div className="pannello-sub">{pannello.sottotitolo}</div>}
       </div>
